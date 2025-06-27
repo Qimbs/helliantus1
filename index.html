@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Гелиантус - Магазин цветов</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    h1, h2, h3 {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body class="bg-[#384027] text-gray-100 relative overflow-x-hidden pt-20">
+  <nav class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 bg-white bg-opacity-90 shadow">
+    <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="text-gray-800 text-4xl font-semibold leading-tight text-center block">
+      Гелиантус
+      <div class="text-lg font-light">магазин цветов</div>
+    </a>
+    <ul class="flex justify-end flex-1 space-x-10 text-black text-xl font-medium">
+      <li><a href="#catalog" class="hover:text-pink-600 transition-transform duration-300 transform hover:scale-110">Каталог</a></li>
+      <li><a href="#about" class="hover:text-pink-600 transition-transform duration-300 transform hover:scale-110">О нас</a></li>
+      <li><a href="#portfolio" class="hover:text-pink-600 transition-transform duration-300 transform hover:scale-110">Букеты</a></li>
+      <li><a href="#contact" class="hover:text-pink-600 transition-transform duration-300 transform hover:scale-110">Контакты</a></li>
+      <li>
+        <a href="#contact" class="ml-4 inline-block bg-pink-600 text-white px-5 py-2 rounded hover:bg-pink-700 transition">Свяжитесь с нами</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="relative z-10 py-32 text-center bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center text-white overflow-hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-40 z-0 mix-blend-multiply"></div>
+  <div class="relative z-10">
+    <h1 class="text-5xl md:text-6xl mb-4 drop-shadow-xl">Говорим за вас языком цветов</h1>
+    <p class="text-xl text-white drop-shadow">Мы создаем и доставляем свежие цветы</p>
+    <a href="#contact" class="mt-6 inline-block px-8 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition">Заказать букет</a>
+    </div>
+</header>
+
+  
+  <div class="absolute inset-0 flex items-center justify-center">
+    <a href="#contact" class="bg-pink-600 text-white px-8 py-3 rounded hover:bg-pink-700 transition text-lg shadow-lg">Заказать</a>
+  </div>
+</div>
+  </div>
+
+  <section id="catalog" style="position: relative; z-index: 10;" class="py-20" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl mb-12 text-center text-black">Каталог</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 border rounded" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="Розы" class="mb-4 rounded object-cover w-full h-48">
+          <h3 class="text-xl mb-2">Розы</h3>
+          <p class="text-black">от 1500 ₽</p>
+        </div>
+        <div class="p-6 border rounded" data-aos="fade-left" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1587300031267-7d49a3d9d812?auto=format&fit=crop&w=600&q=80" alt="Тюльпаны" class="mb-4 rounded object-cover w-full h-48">
+          <h3 class="text-xl mb-2">Тюльпаны</h3>
+          <p class="text-black">от 1200 ₽</p>
+        </div>
+        <div class="p-6 border rounded" data-aos="fade-right" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1615484477653-1ee3dce630b2?auto=format&fit=crop&w=600&q=80" alt="Авторский букет" class="mb-4 rounded object-cover w-full h-48">
+          <h3 class="text-xl mb-2">Авторские букеты</h3>
+          <p class="text-black">от 2000 ₽</p>
+        </div>
+        <div class="p-6 border rounded" data-aos="fade-left" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1615485233197-070e48250460?auto=format&fit=crop&w=600&q=80" alt="Пионы" class="mb-4 rounded object-cover w-full h-48">
+          <h3 class="text-xl mb-2">Пионы</h3>
+          <p class="text-black">от 1800 ₽</p>
+        </div>
+        <div class="p-6 border rounded" data-aos="fade-right" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1615485709281-5020c846dc3b?auto=format&fit=crop&w=600&q=80" alt="Сборные букеты" class="mb-4 rounded object-cover w-full h-48">
+          <h3 class="text-xl mb-2">Сборные букеты</h3>
+          <p class="text-black">от 1900 ₽</p>
+        </div>
+        <div class="p-6 border rounded" data-aos="fade-left" data-aos-delay="500">
+          <img src="https://images.unsplash.com/photo-1615484722919-b2e858d92957?auto=format&fit=crop&w=600&q=80" alt="Летние композиции" class="mb-4 rounded object-cover w-full h-48">
+          <h3 class="text-xl mb-2">Летние композиции</h3>
+          <p class="text-black">от 1700 ₽</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Доставка -->
+  <section id="delivery" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl mb-8 text-center text-black">Доставка</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-black">
+        <div class="p-6 border rounded shadow-sm" data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1603570419984-66d1a6a28308?auto=format&fit=crop&w=600&q=80" alt="Самовывоз" class="mb-4 rounded w-full h-32 object-cover">
+          <h3 class="text-xl mb-2 font-semibold">Самовывоз</h3>
+          <p>Вы можете забрать ваш заказ самостоятельно из магазина по адресу: Московская ул., 2, стр. 4, рабочий посёлок Монино.</p>
+        </div>
+        <div class="p-6 border rounded shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1603541776568-9f45e6d833c0?auto=format&fit=crop&w=600&q=80" alt="Курьерская доставка" class="mb-4 rounded w-full h-32 object-cover">
+          <h3 class="text-xl mb-2 font-semibold">Курьерская доставка</h3>
+          <p>Осуществляется по Москве и области в течение дня. Стоимость доставки зависит от расстояния.</p>
+        </div>
+        <div class="p-6 border rounded shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1592595896551-12bfcac6ffb7?auto=format&fit=crop&w=600&q=80" alt="Доставка-сюрприз" class="mb-4 rounded w-full h-32 object-cover">
+          <h3 class="text-xl mb-2 font-semibold">Доставка-сюрприз</h3>
+          <p>Мы можем доставить букет анонимно от вашего имени. Добавим записку, оформим красиво — вы удивите получателя!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Примеры наших работ -->
+  <section id="portfolio" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl mb-8 text-center text-black">Примеры наших работ</h2>
+      <div class="relative">
+        <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow z-10">&#10094;</button>
+        <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow z-10">&#10095;</button>
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out overflow-hidden space-x-4 snap-x snap-mandatory w-full max-w-full">
+          <img src="https://source.unsplash.com/random/600x400?flower1" class="h-64 w-1/3 flex-shrink-0 rounded shadow snap-start" alt="Фото 1">
+          <img src="https://source.unsplash.com/random/600x400?flower2" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 2">
+          <img src="https://source.unsplash.com/random/600x400?flower3" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 3">
+          <img src="https://source.unsplash.com/random/600x400?flower4" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 4">
+          <img src="https://source.unsplash.com/random/600x400?flower5" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 5">
+          <img src="https://source.unsplash.com/random/600x400?flower6" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 6">
+          <img src="https://source.unsplash.com/random/600x400?flower7" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 7">
+          <img src="https://source.unsplash.com/random/600x400?flower8" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 8">
+          <img src="https://source.unsplash.com/random/600x400?flower9" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 9">
+          <img src="https://source.unsplash.com/random/600x400?flower10" class="h-64 w-[600px] flex-shrink-0 rounded shadow snap-start" alt="Фото 10">
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    const carousel = document.getElementById('carousel');
+    let scrollAmount = 0;
+    const scrollStep = 600 + 16;
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- Контакты и карта -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl mb-8 text-center text-black">Контакты</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="mb-4 text-lg text-black">Вы можете связаться с нами по телефону:</p>
+          <p class="text-xl font-semibold text-black mb-4">+7 (495) 123-45-67</p>
+          <p class="mb-2 text-black">Адрес:</p>
+          <p class="text-black">Московская ул., 2, стр. 4, рабочий посёлок Монино</p>
+        </div>
+        <div>
+          <div id="map" class="w-full h-64 rounded shadow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    ymaps.ready(function () {
+      var map = new ymaps.Map('map', {
+        center: [55.843522, 38.195294], zoom: 21
+      });
+      map.geoObjects.add(new ymaps.Placemark([55.843522, 38.195294], {
+        balloonContent: '<a href="https://yandex.ru/maps/org/geliantus/160728109124/?ll=38.195294%2C55.843522&z=21" target="_blank">Гелиантус — магазин цветов</a>'
+      }));
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>
