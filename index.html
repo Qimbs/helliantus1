@@ -4,6 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Гелиантус - Магазин цветов</title>
+  <!-- Favicon и метатеги для соцсетей -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Магазин букетов с доставкой по Москве. Авторские, сборные букеты, пионы, розы, летние композиции.">
+  <meta property="og:title" content="Гелиантус - Магазин цветов">
+  <meta property="og:description" content="Свежие цветы с доставкой по Москве и области.">
+  <meta property="og:image" content="https://ваш_сайт/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qimbs.github.io/helliantus1/">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "Гелиантус",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Московская ул., 2, стр. 4",
+        "addressLocality": "Монино",
+        "addressCountry": "RU"
+      },
+      "telephone": "+7 (495) 123-45-67"
+    }
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
@@ -36,25 +58,20 @@
 
   <!-- Hero -->
   <header class="relative z-10 py-32 text-center bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center text-white overflow-hidden">
-  <div class="absolute inset-0 bg-black bg-opacity-40 z-0 mix-blend-multiply"></div>
-  <div class="relative z-10">
-    <h1 class="text-5xl md:text-6xl mb-4 drop-shadow-xl">Говорим за вас языком цветов</h1>
-    <p class="text-xl text-white drop-shadow">Мы создаем и доставляем свежие цветы</p>
-    <a href="#contact" class="mt-6 inline-block px-8 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition">Заказать букет</a>
+    <div class="absolute inset-0 bg-black bg-opacity-40 z-0 mix-blend-multiply"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl md:text-6xl mb-4 drop-shadow-xl">Гелиантус</h1>
+      <p class="text-xl text-white drop-shadow">Свежие цветы с доставкой по Москве и области</p>
+      <a href="#contact" class="mt-6 inline-block px-8 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition">Заказать букет</a>
     </div>
-</header>
-
-  
-  <div class="absolute inset-0 flex items-center justify-center">
-    <a href="#contact" class="bg-pink-600 text-white px-8 py-3 rounded hover:bg-pink-700 transition text-lg shadow-lg">Заказать</a>
-  </div>
-</div>
-  </div>
+  </header>
+  <!-- Дублирующую кнопку "Заказать" удалили! -->
 
   <section id="catalog" style="position: relative; z-index: 10;" class="py-20" data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-3xl mb-12 text-center text-black">Каталог</h2>
       <div class="grid md:grid-cols-3 gap-6">
+        <!-- Каталог цветов, как был -->
         <div class="p-6 border rounded" data-aos="fade-right">
           <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="Розы" class="mb-4 rounded object-cover w-full h-48">
           <h3 class="text-xl mb-2">Розы</h3>
@@ -135,28 +152,52 @@
       </div>
     </div>
   </section>
+  <!-- Циклическая карусель -->
   <script>
     const carousel = document.getElementById('carousel');
-    let scrollAmount = 0;
-    const scrollStep = 600 + 16;
+    const images = carousel.querySelectorAll('img');
+    const imgCount = images.length;
+    const imgWidth = images[0].offsetWidth + 16;
+
     document.getElementById('prevBtn').addEventListener('click', () => {
-      carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+      if (carousel.scrollLeft <= 0) {
+        carousel.scrollTo({ left: (imgCount - 1) * imgWidth, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: -imgWidth, behavior: 'smooth' });
+      }
     });
     document.getElementById('nextBtn').addEventListener('click', () => {
-      carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      if (carousel.scrollLeft >= (imgCount - 1) * imgWidth) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: imgWidth, behavior: 'smooth' });
+      }
     });
   </script>
 
-  <!-- Контакты и карта -->
+  <!-- Контакты и форма -->
   <section id="contact" class="py-20 bg-gray-50">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-3xl mb-8 text-center text-black">Контакты</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <p class="mb-4 text-lg text-black">Вы можете связаться с нами по телефону:</p>
-          <p class="text-xl font-semibold text-black mb-4">+7 (495) 123-45-67</p>
-          <p class="mb-2 text-black">Адрес:</p>
-          <p class="text-black">Московская ул., 2, стр. 4, рабочий посёлок Монино</p>
+          <form action="https://formspree.io/f/your-id" method="POST" class="bg-white rounded p-6 shadow space-y-4">
+            <input type="text" name="name" placeholder="Ваше имя" required class="w-full border px-3 py-2 rounded text-black">
+            <input type="email" name="email" placeholder="Ваш email" required class="w-full border px-3 py-2 rounded text-black">
+            <textarea name="message" placeholder="Ваше сообщение" required class="w-full border px-3 py-2 rounded text-black"></textarea>
+            <button type="submit" class="bg-pink-600 text-white px-6 py-2 rounded hover:bg-pink-700 transition">Отправить</button>
+          </form>
+          <div class="mt-6 text-black">
+            <p class="mb-2">Телефон:</p>
+            <p class="text-xl font-semibold mb-4">+7 (495) 123-45-67</p>
+            <p class="mb-2">Адрес:</p>
+            <p>Московская ул., 2, стр. 4, рабочий посёлок Монино</p>
+            <!-- Соцсети -->
+            <div class="flex space-x-4 mt-4">
+              <a href="https://vk.com/yourpage" target="_blank" title="VK"><img src="vk-icon.svg" class="w-6 h-6" alt="VK"></a>
+              <a href="https://instagram.com/yourpage" target="_blank" title="Instagram"><img src="instagram-icon.svg" class="w-6 h-6" alt="Instagram"></a>
+            </div>
+          </div>
         </div>
         <div>
           <div id="map" class="w-full h-64 rounded shadow"></div>
